@@ -1,46 +1,26 @@
- /* Copyright 2021 Dane Evans
-  *
-  * This program is free software: you can redistribute it and/or modify
-  * it under the terms of the GNU General Public License as published by
-  * the Free Software Foundation, either version 2 of the License, or
-  * (at your option) any later version.
-  *
-  * This program is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU General Public License for more details.
-  *
-  * You should have received a copy of the GNU General Public License
-  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-  #pragma once
+#pragma once
 
+#define MASTER_LEFT
 
+#define SPLIT_USB_DETECT
 //#define USE_MATRIX_I2C
 
 /* Select hand configuration */
 
 ///https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
 
-
-#define MASTER_LEFT
-#define SPLIT_USB_DETECT
-// #define EE_HANDS
-#define USB_SUSPEND_WAKEUP_DELAY 3000
 #define CUSTOM_FONT
 
 #define CUSTOM_LAYER_READ //if you remove this it causes issues - needs better guarding
 
+
+#define QUICK_TAP_TERM 0
 #ifdef TAPPING_TERM
     #undef TAPPING_TERM
     #define TAPPING_TERM 200
 #endif
-#define PERMISSIVE_HOLD
 #define ENCODER_DIRECTION_FLIP
 
-#define OLED_TIMEOUT 120000
-#define OLED_BRIGHTNESS 120
-#define SPLIT_WPM_ENABLE
 
 #define RGBLIGHT_SLEEP
 //
@@ -51,8 +31,8 @@
 
 
 #ifdef RGB_MATRIX_ENABLE
-#define RGBLIGHT_LED_COUNT 36    // Number of LEDs
-#define RGBLIGHT_LED_COUNT 36    // Number of LEDs
+#define RGBLIGHT_LED_COUNT 35    // Number of LEDs
+#define RGBLIGHT_LED_COUNT 35    // Number of LEDs
 #define RGB_MATRIX_LED_COUNT RGBLIGHT_LED_COUNT
 #endif
 
@@ -70,11 +50,12 @@
 	//#define RGBLIGHT_EFFECT_ALTERNATING
 	//#define RGBLIGHT_EFFECT_TWINKLE
 
-    #define RGBLIGHT_LED_COUNT 72
-	//#define RGBLED_SPLIT
-	#define RGBLED_SPLIT { 36, 36 } // haven't figured out how to use this yet
+    #define RGBLIGHT_LED_COUNT 70
+	#undef RGBLED_SPLIT
+	#define RGBLED_SPLIT { 35, 35 } // haven't figured out how to use this yet
 
 	//#define RGBLIGHT_LED_COUNT 30
+    #undef RGBLIGHT_LIMIT_VAL
     #define RGBLIGHT_LIMIT_VAL 120
     #define RGBLIGHT_HUE_STEP 10
     #define RGBLIGHT_SAT_STEP 17
