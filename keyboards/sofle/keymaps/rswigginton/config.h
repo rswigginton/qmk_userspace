@@ -13,12 +13,13 @@
 
 #define CUSTOM_LAYER_READ //if you remove this it causes issues - needs better guarding
 
-
-#define QUICK_TAP_TERM 0
+#define PERMISSIVE_HOLD
 #ifdef TAPPING_TERM
     #undef TAPPING_TERM
     #define TAPPING_TERM 200
 #endif
+#define QUICK_TAP_TERM 200 // set to 0 to disable
+#define QUICK_TAP_TERM_PER_KEY
 #define ENCODER_DIRECTION_FLIP
 
 
